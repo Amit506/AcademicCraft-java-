@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d7af6cb7-a77a-4f62-b59e-b1051ca6390a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api/src/main/java/com/example/Api/Controller/AuthenticationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/AuthGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/AuthGroupPermissions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/AuthLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/AuthPermission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/AuthSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/AuthUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/AuthUserGroups.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/AuthUserUserPermissions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Repository/AuthUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Service/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/ThirdPartyAuth.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2dIkvDcVwbq9t7Ko8S4OwES2Dgq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ApiApplication.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.AcademicCrafts [-v].executor": "Run",
+    "Maven.AcademicCrafts [clean,install,-U].executor": "Run",
+    "Maven.AcademicCrafts [clean,install...].executor": "Run",
+    "Maven.AcademicCrafts [clean,install].executor": "Run",
+    "Maven.AcademicCrafts [clean,package...].executor": "Run",
+    "Maven.AcademicCrafts [spring-boot:run].executor": "Run",
+    "Maven.Api [clean,install,-U].executor": "Run",
+    "Maven.Api [clean,install].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\AcademicCrafts\Auth\src\main\java" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn -v" />
+      <command value="mvn clean install -U " />
+      <command value="mvn clean package spring-boot:start" />
+      <command value="mvn  spring-boot:run " />
+      <command value="mvn clean install" />
+      <command value="mvn clean install -DskipTests " />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="ApiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.Api.ApiApplication" />
+      <module name="Api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ApiApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-1.8.0_402-corretto-1.8.0_402-4caba194b151-ae57be32" />
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d7af6cb7-a77a-4f62-b59e-b1051ca6390a" name="Changes" comment="" />
+      <created>1709703209360</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709703209360</updated>
+    </task>
+    <servers />
+  </component>
+</project>
