@@ -1,5 +1,7 @@
-package com.example.Auth;
+package com.example.Auth.Model;
 
+import com.example.Auth.Model.AuthGroup;
+import com.example.Auth.Model.AuthUser;
 import jakarta.persistence.*;
 import java.util.Date;
 

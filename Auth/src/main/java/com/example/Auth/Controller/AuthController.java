@@ -1,8 +1,10 @@
-package com.example.Api.Controller;
+package com.example.Auth.Controller;
+
 
 import com.example.Auth.Service.AuthService;
+import com.example.Auth.Model.AuthUser;
+import com.example.Auth.Service.AuthServiceImpl;
 import jakarta.servlet.http.HttpServletRequest;
-import com.example.Auth.AuthUser;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,14 +15,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/auth")
-public class AuthenticationController {
+public class AuthController {
     @Autowired
-    AuthService authService;
+    AuthServiceImpl authService;
 
 
     @GetMapping("/test")
     public ResponseEntity signup(HttpServletRequest request) {
-       List<AuthUser> authService1= authService.getAuthUsers();
+//        List<AuthUser> authService1= authService.getAuthUsers();
         System.out.println("hii");
 
         return ResponseEntity.ok("Hiii");
