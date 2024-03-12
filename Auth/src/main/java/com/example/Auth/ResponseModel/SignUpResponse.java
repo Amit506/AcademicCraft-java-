@@ -5,7 +5,8 @@ import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class SignInResponse extends BaseTokeResponse {
+public class SignUpResponse extends BaseTokeResponse {
+
     Long userId;
 
 }

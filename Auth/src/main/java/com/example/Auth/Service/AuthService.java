@@ -1,38 +1,18 @@
 package com.example.Auth.Service;
 
 import com.example.Auth.RequestModel.SignInRequest;
-import com.example.Auth.Model.AuthUser;
-import com.example.Auth.Repository.AuthUserRepository;
+import com.example.Auth.RequestModel.SignupRequest;
 import com.example.Auth.ResponseModel.SignInResponse;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.example.Auth.ResponseModel.SignUpResponse;
 
-import java.util.List;
+public interface AuthService {
 
-@Service
-public class AuthService implements AuthServiceImpl {
+    public SignInResponse signIn (SignInRequest signInRequest);
 
-    @Autowired
-    private AuthUserRepository authUserRepository;
+    public SignUpResponse signUp(SignupRequest signupRequest);
+    public  void signIn();
 
-    public List<AuthUser> getAuthUsers() {
-        return authUserRepository.findAll();
-    }
+    public void addPermission();
 
 
-    @Override
-    public SignInResponse signUp(SignInRequest signInRequest) {
-        return  new SignInResponse();
-
-    }
-
-    @Override
-    public void signIn() {
-
-    }
-
-    @Override
-    public void addPermission() {
-
-    }
 }

@@ -19,28 +19,42 @@ import java.util.function.Function;
 public class JwtService {
  private final String token;
 
-    public static final String SECRET = "5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437";
+    public static final String ACCESS_SECRET = "5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437";
+    public static final String REFRESH_SECRET = "5367566B59703373367639792F423F4528482B4D6251655468576D5A71349876";
+
 
     public JwtService(String token) {
         this.token = token;
     }
 
-    public static String generateToken(String userName) {
-        Map<String, Object> claims = new HashMap<>();
+    public static String generateToken(String userName,Map<String, Object> claims) {
         return createToken(claims, userName);
     }
-
+    public static String generateRefreshToken(String userName) {
+        return refreshToken(userName);
+    }
+    private static String refreshToken(String userName) {
+        return Jwts.builder()
+                .setSubject(userName)
+                .setIssuedAt(new Date(System.currentTimeMillis()))
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 600))
+                .signWith(getRefreshSignKey(), SignatureAlgorithm.HS256).compact();
+    }
     private static String createToken(Map<String, Object> claims, String userName) {
         return Jwts.builder()
                 .setClaims(claims)
                 .setSubject(userName)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 30))
-                .signWith(getSignKey(), SignatureAlgorithm.HS256).compact();
+                .signWith(getAccessSignKey(), SignatureAlgorithm.HS256).compact();
     }
 
-    private static Key getSignKey() {
-        byte[] keyBytes= Decoders.BASE64.decode(SECRET);
+    private static Key getRefreshSignKey() {
+        byte[] keyBytes= Decoders.BASE64.decode(REFRESH_SECRET);
+        return Keys.hmacShaKeyFor(keyBytes);
+    }
+    private static Key getAccessSignKey() {
+        byte[] keyBytes= Decoders.BASE64.decode(REFRESH_SECRET);
         return Keys.hmacShaKeyFor(keyBytes);
     }
 
@@ -63,7 +77,7 @@ public class JwtService {
     private Claims extractAllClaims() {
         Claims claims= Jwts
                 .parserBuilder()
-                .setSigningKey(getSignKey())
+                .setSigningKey(getAccessSignKey())
                 .build()
                 .parseClaimsJws(token)
                 .getBody();

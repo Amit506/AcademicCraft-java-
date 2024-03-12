@@ -4,6 +4,8 @@ import com.example.Auth.Model.AuthUser;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.Date;
 
@@ -12,8 +14,10 @@ import java.util.Date;
 @Entity
 @Table(name = "third_party_auth")
 public class ThirdPartyAuth {
-
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @OneToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private AuthUser user;
@@ -36,10 +40,12 @@ public class ThirdPartyAuth {
     @Column(name = "attribute_value", length = 255)
     private String attributeValue;
 
-    @Column(name = "created_at")
+    @Column(name = "created_at",nullable = false,updatable = false)
+    @CreationTimestamp
     private Date createdAt;
 
-    @Column(name = "updated_at")
+    @Column(name = "updated_at",nullable = false,updatable = true)
+    @UpdateTimestamp
     private Date updatedAt;
 
     // Getters and setters

@@ -4,44 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7af6cb7-a77a-4f62-b59e-b1051ca6390a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Config/JwtAuthFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Config/JwtAuthenticationConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Config/JwtAuthenticationProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Config/JwtSecurityConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Config/JwtService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Controller/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Controller/PermissionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Controller/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Repository/AuthGroupPermissionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Repository/AuthGroupRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Repository/AuthUserUserPermissionsRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Repository/PermissionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/RequestModel/PermissionRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/RequestModel/SignInRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/ResponseModel/BaseResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/ResponseModel/SignInResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Service/AuthServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Service/PermissionServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Service/TestService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d7af6cb7-a77a-4f62-b59e-b1051ca6390a" name="Changes" comment="jwt auth done">
+      <change afterPath="$PROJECT_DIR$/Api/src/main/resources/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Config/UserRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Repository/ThirdPartyAuthRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/RequestModel/SignupRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/ResponseModel/BaseResponseBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/ResponseModel/BaseTokeResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/ResponseModel/SignUpResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/src/main/java/com/example/Api/Controller/AuthenticationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Api/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Auth/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/AuthGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Model/AuthGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/AuthGroupPermissions.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Model/AuthGroupPermissions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/AuthLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Model/AuthLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/AuthPermission.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Model/AuthPermission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/AuthSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Model/AuthSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/AuthUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Model/AuthUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/AuthUserGroups.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Model/AuthUserGroups.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/AuthUserUserPermissions.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Model/AuthUserUserPermissions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Repository/AuthUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Repository/AuthUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Config/JwtAuthenticationProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Config/JwtAuthenticationProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Config/JwtSecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Config/JwtSecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Config/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Config/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Controller/PermissionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Controller/PermissionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Model/AuthGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Model/AuthGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Model/AuthGroupPermissions.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Model/AuthGroupPermissions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Model/AuthLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Model/AuthLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Model/AuthSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Model/AuthSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Model/AuthUserGroups.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Model/AuthUserGroups.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Model/AuthUserUserPermissions.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Model/AuthUserUserPermissions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Model/ThirdPartyAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Model/ThirdPartyAuth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Repository/AuthUserUserPermissionsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Repository/AuthUserUserPermissionsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Repository/PermissionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Repository/PermissionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/RequestModel/SignInRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/RequestModel/SignInRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/ResponseModel/BaseResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/ResponseModel/BaseResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/ResponseModel/SignInResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/ResponseModel/SignInResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/ThirdPartyAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Model/ThirdPartyAuth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Service/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Service/AuthServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Service/PermissionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Service/PermissionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Service/TestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/example/Auth/Service/TestService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +46,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -90,7 +85,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.ApiApplication.executor": "Run",
+    "Application.ApiApplication.executor": "Debug",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "Maven.AcademicCrafts [-v].executor": "Run",
     "Maven.AcademicCrafts [clean,install,-U].executor": "Run",
@@ -164,6 +159,15 @@
       <option name="presentableId" value="Default" />
       <updated>1709703209360</updated>
     </task>
+    <task id="LOCAL-00001" summary="jwt auth done">
+      <option name="closed" value="true" />
+      <created>1710189068000</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710189068000</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -176,5 +180,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="jwt auth done" />
+    <option name="LAST_COMMIT_MESSAGE" value="jwt auth done" />
   </component>
 </project>

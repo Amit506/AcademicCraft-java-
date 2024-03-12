@@ -5,6 +5,8 @@ import java.util.Date;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Getter
 @Setter
@@ -19,10 +21,12 @@ public class AuthGroup {
     @Column(unique = true, length = 150)
     private String name;
 
-    @Column(name = "created_at")
+    @Column(name = "created_at",nullable = false,updatable = false)
+    @CreationTimestamp
     private Date createdAt;
 
-    @Column(name = "updated_at")
+    @Column(name = "updated_at",nullable = false,updatable = true)
+    @UpdateTimestamp
     private Date updatedAt;
 // Getters and setters
 }

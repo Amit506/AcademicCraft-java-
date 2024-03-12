@@ -5,7 +5,7 @@ import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class SignInResponse extends BaseTokeResponse {
-    Long userId;
-
+public class BaseTokeResponse extends BaseResponse {
+    String accessToken;
+    String refreshToken;
 }
