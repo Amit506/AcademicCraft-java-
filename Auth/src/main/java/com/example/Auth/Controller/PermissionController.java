@@ -23,32 +23,35 @@ public class PermissionController {
 
     @Autowired
     PermissionServiceImpl permissionService;
+
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping("/add_permission")
-    ResponseEntity addPermission(HttpServletRequest httpServletRequest,@RequestBody PermissionRequest permissionRequest){
-        try{
+    ResponseEntity addPermission(HttpServletRequest httpServletRequest, @RequestBody PermissionRequest permissionRequest) {
+        try {
             LOG.info(SecurityContextHolder.getContext().getAuthentication().getAuthorities());
-           BaseResponseBuilder baseResponseBuilder = permissionService.addPermission(permissionRequest);
-            return  ResponseEntity.status(HttpStatus.valueOf(baseResponseBuilder.getStatusCode())).body(baseResponseBuilder);
-        }catch (Exception e){
+            BaseResponseBuilder baseResponseBuilder = permissionService.addPermission(permissionRequest);
+            return ResponseEntity.status(HttpStatus.valueOf(baseResponseBuilder.getStatusCode())).body(baseResponseBuilder);
+        } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal Server Error");
         }
 
     }
+
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping("/add_group")
-    ResponseEntity addGroup(HttpServletRequest httpServletRequest,@RequestBody PermissionRequest permissionRequest){
-        try{
+    ResponseEntity addGroup(HttpServletRequest httpServletRequest, @RequestBody PermissionRequest permissionRequest) {
+        try {
             BaseResponseBuilder baseResponseBuilder = permissionService.addGroup(permissionRequest);
-            return  ResponseEntity.status(HttpStatus.valueOf(baseResponseBuilder.getStatusCode())).body(baseResponseBuilder);
-        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.valueOf(baseResponseBuilder.getStatusCode())).body(baseResponseBuilder);
+        } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal Server Error");
         }
 
     }
+
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping("/attach_group_permission")
-    ResponseEntity attachGroupToPermission(HttpServletRequest httpServletRequest,@RequestParam Long groupId,@RequestParam Long permissionId) {
+    ResponseEntity attachGroupToPermission(HttpServletRequest httpServletRequest, @RequestParam Long groupId, @RequestParam Long permissionId) {
         try {
             BaseResponseBuilder baseResponseBuilder = permissionService.attachGroupToPermission(groupId, permissionId);
             return ResponseEntity.status(HttpStatus.valueOf(baseResponseBuilder.getStatusCode())).body(baseResponseBuilder);
@@ -56,22 +59,24 @@ public class PermissionController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal Server Error");
         }
     }
+
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping("/admin_permission")
     public ResponseEntity adminPermission(HttpServletRequest request, @RequestParam Integer userId) {
-        try{
-            BaseResponseBuilder baseResponseBuilder= permissionService.provideAdminPermission(userId);
-            return  ResponseEntity.status(HttpStatus.valueOf(baseResponseBuilder.getStatusCode())).body(baseResponseBuilder);
-        }catch (Exception e){
+        try {
+            BaseResponseBuilder baseResponseBuilder = permissionService.provideAdminPermission(userId);
+            return ResponseEntity.status(HttpStatus.valueOf(baseResponseBuilder.getStatusCode())).body(baseResponseBuilder);
+        } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal Server Error");
         }
     }
+
     @PostMapping("/default_permission")
     public ResponseEntity defaultPermission(HttpServletRequest request, @RequestParam Integer userId) {
-        try{
-            BaseResponseBuilder baseResponseBuilder= permissionService.provideDefaultPermission(userId);
-            return  ResponseEntity.status(HttpStatus.valueOf(baseResponseBuilder.getStatusCode())).body(baseResponseBuilder);
-        }catch (Exception e){
+        try {
+            BaseResponseBuilder baseResponseBuilder = permissionService.provideDefaultPermission(userId);
+            return ResponseEntity.status(HttpStatus.valueOf(baseResponseBuilder.getStatusCode())).body(baseResponseBuilder);
+        } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal Server Error");
         }
     }

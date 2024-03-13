@@ -1,7 +1,6 @@
 package com.example.Auth.Config;
 
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -32,24 +31,24 @@ public class JwtSecurityConfiguration {
     JwtAuthenticationProvider jwtAuthenticationProvider;
 
 
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
-      var authManager=  new ProviderManager(jwtAuthenticationProvider);
-        SecurityFilterChain securityFilterChain= http
-                  .csrf(csrf->csrf.disable())
+        var authManager = new ProviderManager(jwtAuthenticationProvider);
+        SecurityFilterChain securityFilterChain = http
+                .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(authConfig -> authConfig
                         .requestMatchers("/permission/**").authenticated()
                         .requestMatchers("/test/**").authenticated()
                         .anyRequest().permitAll())
                 .authenticationProvider(jwtAuthenticationProvider)
-                .addFilterBefore(new JwtAuthFilter(authManager,new JwtAuthenticationConverter(authManager)), UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(new JwtAuthFilter(authManager, new JwtAuthenticationConverter(authManager)), UsernamePasswordAuthenticationFilter.class)
 
                 .build();
         return securityFilterChain;
 
     }
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

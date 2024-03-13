@@ -14,11 +14,12 @@ import org.springframework.web.bind.annotation.*;
 public class TestController {
     @Autowired
     TestService testService;
+
     @PreAuthorize("hasRole('ROLE_DEFAULT')")
     @PostMapping("/addUser")
-    ResponseEntity attachGroupToPermission(HttpServletRequest httpServletRequest, @RequestParam String username, @RequestParam String password,@RequestParam String email) {
+    ResponseEntity attachGroupToPermission(HttpServletRequest httpServletRequest, @RequestParam String username, @RequestParam String password, @RequestParam String email) {
         try {
-            BaseResponseBuilder baseResponseBuilder = testService.addTestUser(username, password,email);
+            BaseResponseBuilder baseResponseBuilder = testService.addTestUser(username, password, email);
             return ResponseEntity.status(HttpStatus.valueOf(200)).body(baseResponseBuilder);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal Server Error");

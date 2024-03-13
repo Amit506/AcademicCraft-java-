@@ -25,9 +25,10 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 import java.util.Collections;
+
 public class JwtAuthFilter extends AuthenticationFilter {
 
-    public JwtAuthFilter(AuthenticationManager authenticationManager,JwtAuthenticationConverter jwtAuthenticationConverter) {
+    public JwtAuthFilter(AuthenticationManager authenticationManager, JwtAuthenticationConverter jwtAuthenticationConverter) {
 
         super(authenticationManager, jwtAuthenticationConverter);
         super.setFailureHandler(JwtAuthFilter::onFailure);
@@ -46,7 +47,6 @@ public class JwtAuthFilter extends AuthenticationFilter {
     }
 
 }
-
 
 
 //    @Override

@@ -26,7 +26,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Component
+@Service
 public class JwtAuthenticationProvider implements AuthenticationProvider {
     private static final Logger LOG = LogManager.getLogger(JwtAuthenticationProvider.class);
 

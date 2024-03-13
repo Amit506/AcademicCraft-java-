@@ -24,8 +24,8 @@ public class JwtAuthenticationConverter implements AuthenticationConverter {
 
     @Override
     public Authentication convert(HttpServletRequest request) {
-        String token= request.getHeader("x-accessToken");
-        if(Objects.nonNull(token)) {
+        String token = request.getHeader("x-accessToken");
+        if (Objects.nonNull(token)) {
             JwtService jwtService = new JwtService(token);
 
             DefaultOAuth2AuthenticatedPrincipal authenticatedPrincipal = new DefaultOAuth2AuthenticatedPrincipal(jwtService.getClaimsMap(), Collections.emptyList());
@@ -33,6 +33,6 @@ public class JwtAuthenticationConverter implements AuthenticationConverter {
             BearerTokenAuthentication bearerTokenAuthentication = new BearerTokenAuthentication(authenticatedPrincipal, oAuth2AccessToken, Collections.emptyList());
             return authenticationManager.authenticate(bearerTokenAuthentication);
         }
-        return  null;
+        return null;
     }
 }

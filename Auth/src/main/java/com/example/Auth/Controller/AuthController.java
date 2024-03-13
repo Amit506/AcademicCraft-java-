@@ -27,19 +27,20 @@ public class AuthController {
     @PostMapping("/signup")
     public ResponseEntity signup(HttpServletRequest request, @RequestBody SignupRequest signupRequest) {
         System.out.println("hii");
-        try{
-            SignUpResponse signUpResponse= authService.signUp(signupRequest);
-            return  ResponseEntity.status(HttpStatus.valueOf(signUpResponse.getStatusCode())).body(signUpResponse);
-        }catch (Exception e){
+        try {
+            SignUpResponse signUpResponse = authService.signUp(signupRequest);
+            return ResponseEntity.status(HttpStatus.valueOf(signUpResponse.getStatusCode())).body(signUpResponse);
+        } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal Server Error");
         }
     }
+
     @PostMapping("/logIn")
     public ResponseEntity logIn(HttpServletRequest request, @RequestBody SignInRequest signInRequest) {
-        try{
-            SignInResponse signInResponse= authService.signIn(signInRequest);
-            return  ResponseEntity.status(HttpStatus.valueOf(signInResponse.getStatusCode())).body(signInResponse);
-        }catch (Exception e){
+        try {
+            SignInResponse signInResponse = authService.signIn(signInRequest);
+            return ResponseEntity.status(HttpStatus.valueOf(signInResponse.getStatusCode())).body(signInResponse);
+        } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal Server Error");
         }
     }

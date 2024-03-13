@@ -27,25 +27,26 @@ public class PermissionServiceImpl {
 
     @Autowired
     AuthUserRepository authUserRepository;
- public BaseResponseBuilder addPermission(PermissionRequest permissionRequest){
-     AuthPermission authPermission=new AuthPermission();
-     authPermission.setCodename(permissionRequest.getCodename());
-     authPermission.setName(permissionRequest.getName());
-     System.out.println(authPermission.toString());
-     AuthPermission authPermissionObj=  permissionRepository.save(authPermission);
-     return BaseResponseBuilder.builder().statusCode(200).message("Added successfully").build();
 
-    }
-
-    public BaseResponseBuilder addGroup(PermissionRequest permissionRequest){
-        AuthGroup authGroup=new AuthGroup();
-        authGroup.setName(permissionRequest.getName());
-        AuthGroup authPermissionObj=  authGroupRepository.save(authGroup);
+    public BaseResponseBuilder addPermission(PermissionRequest permissionRequest) {
+        AuthPermission authPermission = new AuthPermission();
+        authPermission.setCodename(permissionRequest.getCodename());
+        authPermission.setName(permissionRequest.getName());
+        System.out.println(authPermission.toString());
+        AuthPermission authPermissionObj = permissionRepository.save(authPermission);
         return BaseResponseBuilder.builder().statusCode(200).message("Added successfully").build();
 
     }
 
-    public BaseResponseBuilder attachGroupToPermission(Long groupId, Long permissionId){
+    public BaseResponseBuilder addGroup(PermissionRequest permissionRequest) {
+        AuthGroup authGroup = new AuthGroup();
+        authGroup.setName(permissionRequest.getName());
+        AuthGroup authPermissionObj = authGroupRepository.save(authGroup);
+        return BaseResponseBuilder.builder().statusCode(200).message("Added successfully").build();
+
+    }
+
+    public BaseResponseBuilder attachGroupToPermission(Long groupId, Long permissionId) {
         AuthGroupPermissions authGroupPermissions = new AuthGroupPermissions();
         authGroupPermissions.setPermission(permissionRepository.getReferenceById(permissionId));
         authGroupPermissions.setGroup(authGroupRepository.getReferenceById(groupId));
@@ -53,32 +54,35 @@ public class PermissionServiceImpl {
         return BaseResponseBuilder.builder().statusCode(200).message("Added successfully").build();
 
     }
-    public BaseResponseBuilder provideAdminPermission(Integer userId){
-    Optional<AuthUser> authUser = authUserRepository.findById(Long.valueOf(userId));
-     authUser.ifPresent(this::assignPermissionToAdmin);
-     return BaseResponseBuilder.builder().statusCode(200).message("Added successfully").build();
+
+    public BaseResponseBuilder provideAdminPermission(Integer userId) {
+        Optional<AuthUser> authUser = authUserRepository.findById(Long.valueOf(userId));
+        authUser.ifPresent(this::assignPermissionToAdmin);
+        return BaseResponseBuilder.builder().statusCode(200).message("Added successfully").build();
 
     }
-    public BaseResponseBuilder provideDefaultPermission(Integer userId){
+
+    public BaseResponseBuilder provideDefaultPermission(Integer userId) {
         Optional<AuthUser> authUser = authUserRepository.findById(Long.valueOf(userId));
         authUser.ifPresent(this::assignPermissionToUser);
         return BaseResponseBuilder.builder().statusCode(200).message("Added successfully").build();
 
     }
 
-    private void assignPermissionToUser(AuthUser user){
-     AuthPermission authPermission = permissionRepository.getReferenceById(Long.valueOf(UserRole.ROLE_DEFAULT.getRoleId()));
-     AuthUserUserPermissions authUserUserPermissions =new AuthUserUserPermissions();
-     authUserUserPermissions.setPermission(authPermission);
-     authUserUserPermissions.setUser(user);
-     AuthUserUserPermissions authUserUserPermissionsObj=authUserUserPermissionsRepository.save(authUserUserPermissions);
-    }
-    private void assignPermissionToAdmin(AuthUser user){
-        AuthPermission authPermission = permissionRepository.getReferenceById(Long.valueOf(UserRole.ROLE_ADMIN.getRoleId()));
-        AuthUserUserPermissions authUserUserPermissions =new AuthUserUserPermissions();
+    private void assignPermissionToUser(AuthUser user) {
+        AuthPermission authPermission = permissionRepository.getReferenceById(Long.valueOf(UserRole.ROLE_DEFAULT.getRoleId()));
+        AuthUserUserPermissions authUserUserPermissions = new AuthUserUserPermissions();
         authUserUserPermissions.setPermission(authPermission);
         authUserUserPermissions.setUser(user);
-        AuthUserUserPermissions authUserUserPermissionsObj=authUserUserPermissionsRepository.save(authUserUserPermissions);
+        AuthUserUserPermissions authUserUserPermissionsObj = authUserUserPermissionsRepository.save(authUserUserPermissions);
+    }
+
+    private void assignPermissionToAdmin(AuthUser user) {
+        AuthPermission authPermission = permissionRepository.getReferenceById(Long.valueOf(UserRole.ROLE_ADMIN.getRoleId()));
+        AuthUserUserPermissions authUserUserPermissions = new AuthUserUserPermissions();
+        authUserUserPermissions.setPermission(authPermission);
+        authUserUserPermissions.setUser(user);
+        AuthUserUserPermissions authUserUserPermissionsObj = authUserUserPermissionsRepository.save(authUserUserPermissions);
     }
 
 }

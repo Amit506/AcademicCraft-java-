@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AuthGroupPermissionRepository  extends JpaRepository<AuthGroupPermissions, Long> {
+public interface AuthGroupPermissionRepository extends JpaRepository<AuthGroupPermissions, Long> {
     // Custom query methods, if needed
 }
