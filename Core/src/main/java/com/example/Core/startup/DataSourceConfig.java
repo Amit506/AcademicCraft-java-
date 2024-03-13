@@ -19,9 +19,9 @@ import java.util.Map;
 public class DataSourceConfig {
     private static final Logger LOG = LogManager.getLogger(DataSourceConfig.class);
 
-    @Value("spring.datasource.url")
+    @Value("${spring.datasource.url}")
     String databaseUrl;
-    @Value("spring.datasource.username")
+    @Value("${spring.datasource.username}")
     String username;
 
     @Autowired
@@ -32,8 +32,8 @@ public class DataSourceConfig {
         LOG.info("username {} : url {}",username,databaseUrl);
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName("com.mysql.cj.jdbc.Driver");
-        dataSourceBuilder.url("jdbc:mysql://mysql-23d0a1f-amitkumar50608-7fd4.a.aivencloud.com:21433/academic_craft");
-        dataSourceBuilder.username("avnadmin");
+        dataSourceBuilder.url(databaseUrl);
+        dataSourceBuilder.username(username);
         dataSourceBuilder.password(DefaultDataManager.defaultPropertyList.get(VaultConstants.DB_PASSWORD).getValue());
         return dataSourceBuilder.build();
     }
